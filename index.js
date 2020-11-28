@@ -5,7 +5,7 @@ const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 const RSA = require("./rsa");
 
-app.set("port", 8080);
+app.set("port", process.env.PORT || 8080);
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "views/index.html"));
